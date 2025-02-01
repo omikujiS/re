@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ結果</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="result-container">
+        <div class="header">
+            <h1>職業おみくじ</h1>
+        </div>
+        <div class="main-result">
+            <p>あなたの職業は <span id="job"></span></p>
+            <p>ラッキーアイテムは <span id="item"></span></p>
+        </div>
+        <div class="description"><!--解説-->
+            <p id="jobDescription"></p>
+        </div>
+
+        <!-- 年収の表示 -->
+        <div class="salary">
+            <p id="jobSalary"></p>
+        </div>
+        
+        <div class="image-container">
+            <img id="jobImage" src="" alt="職業の画像">
+            <img id="itemImage" src="" alt="ラッキーアイテムの画像">
+        </div>
+        <button class="btn" onclick="goBack()">戻る</button>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>

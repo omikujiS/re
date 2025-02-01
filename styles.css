@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(163, 27, 27);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden; /* 横スクロールを防止 */
+    width: 100vw; /* ビュー幅を100%に */
+}
+
+h1{
+    font-family: "MS Mincho";
+}
+
+h4{
+    font-family: "MS Mincho";
+}
+
+
+.result-container {
+    background: white;
+    color: black;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: red;
+    margin-bottom: 20px;
+}
+
+.main-result {
+    text-align: center;
+    font-size: 2.0rem;
+    margin-bottom: 20px;
+    font-family: "MS Mincho";
+}
+
+.description {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "MS Mincho";
+    font-weight: bold;
+    
+}
+.salary {/*年収のCSS*/
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    font-weight: bold;
+    color: red; 
+    font-family: "MS Mincho";
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.btn {
+    
+    padding: 10px 40px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "MS Mincho";
+    
+    
+}
+
+.btn:hover {
+    background-color: #c9302c;
+}
+
+.left-btn-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.left-btn {
+    padding: 10px 20px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "MS Mincho";
+}
+
+.left-btn:hover {
+    background-color: #c9302c;
+}
+
+
+
+
+
+
+
+/* おみくじを引くアニメーション*/
+.lottery-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 10;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    animation: rotateCard 2s infinite; /* 回転アニメ */
+}
+
+/* カードが回転する */
+@keyframes rotateCard {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes infinity-scroll-left {
+    from {
+      transform: translateX(0);
+    }
+      to {
+      transform: translateX(-100%);
+    }
+    }
+
+    .scroll-infinity__wrap {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        z-index: 1;
+        margin-top: 200px;
+    }
+    
+    .scroll-infinity__list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+    }
+    
+    .scroll-infinity__list--left {
+        animation: infinity-scroll-left 30s infinite linear;
+    }
+    
+    .scroll-infinity__item {
+        width: calc(100vw / 6);
+    }
+    
+    .scroll-infinity__item > img {
+        width: 100%;
+    }
+    
+    @keyframes infinity-scroll-left {
+        0% {
+            transform: translateX(0);
+        }
+        20% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+
+
+
+    
+    @media (max-width: 767px) {
+        /* 全体のレイアウトを調整 */
+        body {
+            font-size: 14px;
+            padding: 0 10px;
+        
+        }
+    
+        .result-container {
+            width: 90%; /* 幅を90%に */
+            padding: 10px; /* パディングを少し縮小 */
+        }
+    
+        .header h1 {
+            font-size: 1.5rem; /* 見出しのサイズを小さく */
+            margin-bottom: 10px;
+        }
+    
+        .main-result {
+            font-size: 1.5rem; /* 結果のサイズを小さく */
+            margin-bottom: 10px;
+        }
+    
+        .description {
+            font-size: 1rem; /* 説明文のフォントサイズを小さく */
+            padding: 5px; /* パディングを縮小 */
+        }
+    
+        .salary {
+            font-size: 1.1rem; /* 年収のフォントサイズを小さく */
+        }
+    
+        .image-container {
+            flex-direction: column; /* 画像を縦に並べる */
+            gap: 10px; /* ギャップを縮小 */
+        }
+    
+        .image-container img {
+            width: 100%; /* 画像幅を100%に */
+            height: auto; /* 高さを自動に */
+        }
+    
+        .btn {
+            padding: 8px 20px; /* ボタンのパディングを調整 */
+            font-size: 0.9rem; /* フォントサイズを少し小さく */
+        }
+    
+        .left-btn-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    
+        .left-btn {
+            padding: 8px 15px; /* ボタンのパディングを調整 */
+            font-size: 0.9rem; /* フォントサイズを少し小さく */
+        }
+    
+        /* おみくじのカードを中央に配置 */
+        .lottery-animation {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+        }
+    
+        .card {
+            width: 120px; /* 幅を縮小 */
+            height: 160px; /* 高さを縮小 */
+            font-size: 1.2rem; /* フォントサイズを縮小 */
+        }
+    
+        /* 無限スクロール */
+        .scroll-infinity__wrap {
+            margin-top: 100px; /* 上部のマージンを縮小 */
+        }
+    
+        .scroll-infinity__item {
+            width: 30vw; /* 1アイテムの幅を画面の30%に */
+        }
+    }
+    
+    
+
+    

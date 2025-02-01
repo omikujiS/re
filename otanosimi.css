@@ -1,0 +1,334 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(163, 27, 27); /* 和風の温かみのある背景色 */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    font-family: "MS Mincho", serif;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2rem;
+    font-family: "MS Mincho";
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 900px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.job-gallery-container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 900px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.job-gallery {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.item {
+    flex: 0 0 calc(85% / 5); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff3e6; /* 温かみのある背景色 */
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d9534f; /* 赤い枠線 */
+    transform: rotate(2deg); /* 職業用のアイテムは逆方向に傾ける */
+}
+
+.job-item {
+    flex: 0 0 calc(85% / 5); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff3e6;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 0 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d9534f;
+    transform: rotate(-2deg); /* 職業は逆方向に傾ける */
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.job-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.item p {
+    font-size: 1.3rem;
+    color: #5e4b3d;
+    font-family: "MS Mincho", serif;
+}
+
+.job-item p {
+    font-size: 1.3rem;
+    color: #5e4b3d;
+    font-family: "MS Mincho", serif;
+}
+
+/* 左右の矢印ボタンのスタイル */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1; /* 矢印ボタンを前面に表示 */
+}
+
+.left-arrow {
+    left: 10px; /* 位置を少し右に修正 */
+}
+
+.right-arrow {
+    right: 45px; /* 位置を少し左に修正 */
+}
+
+.job-left-arrow {
+    left: 10px; /* 位置を少し右に修正 */
+}
+
+.job-right-arrow {
+    right: 45px; /* 位置を少し左に修正 */
+}
+.arrow-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#modalCaption {
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    padding-top: 10px;
+}
+
+.close {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #f1f1f1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 戻るボタンのスタイル */
+.btn2 {
+    padding: 10px 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: "MS Mincho", serif;
+}
+
+
+@media (max-width: 767px) {
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(163, 27, 27); /* 和風の温かみのある背景色 */
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 15px 0;
+    }
+
+    .gallery-container,
+    .job-gallery-container {
+        width: 100%;
+        height: 250px; /* 高さを調整 */
+    }
+
+    .gallery,
+    .job-gallery {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        width: 100%;
+    }
+
+    .item,
+    .job-item {
+        flex: 0 0 calc(100% / 3); /* アイテムを1行に3つ表示 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #fff3e6; /* 温かみのある背景色 */
+        border-radius: 20px;
+        padding: 15px;
+        margin: 0 5px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        border: 2px solid #d9534f; /* 赤い枠線 */
+        transform: rotate(0deg); /* 傾きなし */
+    }
+
+    .item img,
+    .job-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        margin-bottom: 8px;
+    }
+
+    .item p,
+    .job-item p {
+        font-size: 1rem;
+        color: #5e4b3d;
+        font-family: "MS Mincho", serif;
+    }
+
+    /* 左右の矢印ボタンのスタイル */
+    .arrow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #d9534f;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    .left-arrow {
+        left: 5px;
+    }
+
+    .right-arrow {
+        right: 5px;
+    }
+
+    .job-left-arrow {
+        left: 5px;
+    }
+
+    .job-right-arrow {
+        right: 5px;
+    }
+
+    /* モーダルのスタイル */
+    .modal-content {
+        width: 90%;
+        max-width: 600px; /* 最大幅を少し小さくする */
+    }
+
+    #modalCaption {
+        font-size: 1rem; /* フォントサイズを小さく */
+    }
+
+    .close {
+        font-size: 2rem;
+        top: 5px;
+        right: 10px;
+    }
+
+    .btn2 {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+}
+

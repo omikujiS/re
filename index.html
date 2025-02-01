@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職業おみくじ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">職業おみくじ</h1>
+        <button class="btn" onclick="startLottery()">おみくじを引く</button>
+
+        <!-- 引く時の文字とアニメ -->
+        <div id="lotteryAnimation" class="lottery-animation" style="display: none;">
+            <div class="card">
+                <span>引いてるよ...</span>
+            </div>
+        </div>
+    </div>
+
+     <!-- 左寄せのボタン -->
+     <div class="left-btn-container">
+        <button class="left-btn" onclick="leftButtonClick()">おまけ</button>
+    </div>
+    
+    <script src="code.js"></script>
+    <script src="otanosimi.js"></script>
+
+   
+
+    <h4>今日の職業とラッキーアイテムはなんでしょう</h4>
+
+    <!--スライドの画像-->
+    <div class="scroll-infinity">
+        <div class="scroll-infinity__wrap">
+            <ul class="scroll-infinity__list scroll-infinity__list--left">
+                <li class="scroll-infinity__item"><img src="items/フクロウ.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/マンガ.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/星.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/カブトムシ.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/かいがら.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/犬.png" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/アニメーター.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/料理人.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/騎手.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/スーツアクター.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/消防士.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/漫画家.PNG" /></li>
+            </ul>
+            <ul class="scroll-infinity__list scroll-infinity__list--left">
+                <li class="scroll-infinity__item"><img src="items/フクロウ.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/マンガ.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/星.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/カブトムシ.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/かいがら.png" /></li>
+                <li class="scroll-infinity__item"><img src="items/犬.png" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/アニメーター.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/料理人.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/騎手.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/スーツアクター.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/消防士.PNG" /></li>
+                <li class="scroll-infinity__item"><img src="jobs/漫画家.PNG" /></li>
+            </ul>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

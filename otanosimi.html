@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おまけ図鑑</title>
+    <link rel="stylesheet" href="otanosimi.css">
+</head>
+
+<body>
+    <h1>おまけ図鑑</h1>
+   
+    <!-- アイテム用のスライド -->
+    <div class="gallery-container">
+        <button class="arrow-button left-arrow" onclick="scrollLeftItems()">←</button>
+        <div class="gallery" id="item-gallery"></div>
+        <button class="arrow-button right-arrow" onclick="scrollRightItems()">→</button>
+    </div>
+
+    <!-- 職業用のスライド -->
+    <div class="gallery-container job-gallery-container">
+        <button class="arrow-button left-arrow job-left-arrow" onclick="scrollLeftJobs()">←</button>
+        <div class="gallery job-gallery" id="job-gallery"></div>
+        <button class="arrow-button right-arrow job-right-arrow" onclick="scrollRightJobs()">→</button>
+    </div>
+
+    <!-- モーダル -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+    <div class="btn2-container">
+        <button class="btn2" onclick="goBack()">戻る</button>
+    </div>
+
+    <script src="otanosimi.js"></script>
+</body>
+
+</html>
